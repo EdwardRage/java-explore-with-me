@@ -1,4 +1,3 @@
-/*
 package ru.practicum.ewm;
 
 import org.springframework.boot.SpringApplication;
@@ -9,4 +8,4 @@ public class DtoApp {
     public static void main(String[] args) {
         SpringApplication.run(DtoApp.class, args);
     }
-}*/
+}

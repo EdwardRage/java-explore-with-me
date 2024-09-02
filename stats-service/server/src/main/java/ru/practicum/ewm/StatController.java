@@ -24,7 +24,7 @@ public class StatController {
     @GetMapping("/stats")
     public List<StatResponseDto> getStats(@RequestParam String start,
                                           @RequestParam String end,
-                                          @RequestParam String[] uris,
+                                          @RequestParam(required = false) String[] uris,
                                           @RequestParam(defaultValue = "false") Boolean unique) {
         log.info("Получение статистики для ==> ");
         return service.get(start, end, uris, unique);

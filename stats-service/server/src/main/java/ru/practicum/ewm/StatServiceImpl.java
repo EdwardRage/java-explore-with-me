@@ -32,10 +32,13 @@ public class StatServiceImpl implements StatService {
     public List<StatResponseDto> get(String start, String end, String[] uri, Boolean unique) {
         LocalDateTime startTime = encodeTime(start);
         LocalDateTime endTime = encodeTime(end);
+        if (uri == null || uri.length == 0) {
+            return hitRepository.getStatsWithoutUri(startTime, endTime);
+        }
         List<String> urisList = Arrays.asList(uri);
         if (unique) {
-            return hitRepository.getStats3WithUniqueIp(startTime, endTime, urisList);
+            return hitRepository.getStatsWithUniqueIp(startTime, endTime, urisList);
         }
-        return hitRepository.getStats3(startTime, endTime, urisList);
+        return hitRepository.getStats(startTime, endTime, urisList);
     }
 }

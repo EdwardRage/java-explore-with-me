@@ -28,7 +28,6 @@ public class BaseClient {
         try {
             if (parameters != null) {
                 statsServerResponse = restTemplate.exchange(path, method, requestEntity, Object.class, parameters);
-                //statsServerResponse2 = restTemplate.exchange(path, method, requestEntity, Object.class, parameters);
             } else {
                 statsServerResponse = restTemplate.exchange(path, method, requestEntity, Object.class);
             }

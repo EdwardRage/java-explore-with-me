@@ -36,5 +36,4 @@ public class ClientService extends BaseClient {
         requestDto.setTimestamp(timestamp);
         return requestDto;
     }
-
 }

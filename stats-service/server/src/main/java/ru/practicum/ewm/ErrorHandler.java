@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class ErrorHandler {
 
     @ExceptionHandler
-    public ErrorResponse errorHandle(final Throwable e) {
+    public ErrorResponse errorHandle(final Exception e) {
         log.info("error " + e.getMessage());
         return new ErrorResponse("Ошибка: ", e.getMessage());
     }

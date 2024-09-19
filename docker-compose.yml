@@ -41,7 +41,7 @@ services:
 
   ewm-db:
     image: postgres:16.1
-    container_name: postgres
+    container_name: main-service-db
     ports:
       - "6555:5432"
     environment:

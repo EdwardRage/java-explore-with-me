@@ -22,11 +22,12 @@ public class StatController {
     }
 
     @GetMapping("/stats")
+    @ResponseBody
     public List<StatResponseDto> getStats(@RequestParam String start,
                                           @RequestParam String end,
                                           @RequestParam(required = false) String[] uris,
                                           @RequestParam(defaultValue = "false") Boolean unique) {
-        log.info("Получение статистики для ==> ");
+        log.info("Получение статистики для ==> {}", uris);
         return service.get(start, end, uris, unique);
     }
 }

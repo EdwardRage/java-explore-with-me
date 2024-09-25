@@ -1,6 +1,5 @@
 package ru.practicum.ewm;
 
-import lombok.Builder;
 import lombok.Data;
 
 @Data

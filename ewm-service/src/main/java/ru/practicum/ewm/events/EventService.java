@@ -33,7 +33,8 @@ public interface EventService {
                                                      EventRequestStatusUpdateRequest statusUpdateRequest);
 
     List<EventShortDto> getWithFilter2(String text, List<Long> categories, Boolean paid, String rangeStart,
-                                      String rangeEnd, Boolean onlyAvailable, String sort, Integer from, Integer size);
+                                      String rangeEnd, Boolean onlyAvailable, String sort, Integer from, Integer size,
+                                      HttpServletRequest request);
 
     EventFullDto getEventById(long eventId, HttpServletRequest request);
 }

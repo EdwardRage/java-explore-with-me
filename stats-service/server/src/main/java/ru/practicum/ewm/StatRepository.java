@@ -25,4 +25,7 @@ public interface StatRepository extends JpaRepository<StatModel, Long> {
             "group by eh.app, eh.uri " +
             "order by count (distinct eh.ip) desc")
     List<StatResponseDto> getStatsWithoutUri(LocalDateTime start, LocalDateTime end);
+
+
+    List<StatModel> getById(long id);
 }

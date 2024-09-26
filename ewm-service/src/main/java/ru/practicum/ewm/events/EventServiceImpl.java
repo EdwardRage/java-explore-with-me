@@ -236,7 +236,8 @@ public class EventServiceImpl implements EventService {
     @Override
     public List<EventShortDto> getWithFilter2(String text, List<Long> categories, Boolean paid,
                                       String rangeStart, String rangeEnd, Boolean onlyAvailable,
-                                      String sort, Integer from, Integer size) {
+                                      String sort, Integer from, Integer size,
+                                      HttpServletRequest request) {
 
         CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
         CriteriaQuery<Event> criteriaQuery = criteriaBuilder.createQuery(Event.class);
@@ -285,6 +286,8 @@ public class EventServiceImpl implements EventService {
         }
 
         criteriaQuery.where(predicates);
+
+        addStats(request);
 
         return entityManager.createQuery(criteriaQuery).getResultList().stream()
                 .map(mapperTest::toEventShortDto)

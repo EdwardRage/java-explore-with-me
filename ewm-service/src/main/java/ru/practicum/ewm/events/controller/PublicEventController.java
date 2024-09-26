@@ -28,10 +28,11 @@ public class PublicEventController {
                                    @RequestParam(defaultValue = "false") Boolean onlyAvailable,
                                    @RequestParam(defaultValue = "EVENT_DATE") String sort,
                                    @RequestParam(defaultValue = "0") @PositiveOrZero Integer from,
-                                   @RequestParam(defaultValue = "10") @Positive Integer size) {
+                                   @RequestParam(defaultValue = "10") @Positive Integer size,
+                                   HttpServletRequest request) {
 
         List<EventShortDto> eventList = eventService.getWithFilter2(text, categories, paid, rangeStart, rangeEnd, onlyAvailable,
-                sort, from, size);
+                sort, from, size, request);
         log.info("Поиск с фильтрацией: text = {}, categories = {}, paid = {}, rangeStart = {}, rangeEnd = {}, onlyAvailable = {} " +
                 "sort = {}", text, categories, paid, rangeStart, rangeEnd, onlyAvailable, sort);
         return eventList;

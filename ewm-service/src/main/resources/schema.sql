@@ -46,8 +46,6 @@ create table if not exists events
     created_on         timestamp not null,
     lon                decimal   not null,
     lat                decimal   not null,
-    add index category_indx(category_id),
-    create index
 );
 
 create index events_initiator_index

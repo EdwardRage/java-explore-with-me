@@ -45,7 +45,7 @@ create table if not exists events
     confirmed_request  integer,
     created_on         timestamp not null,
     lon                decimal   not null,
-    lat                decimal   not null,
+    lat                decimal   not null
 );
 
 create index events_initiator_index

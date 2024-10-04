@@ -249,7 +249,6 @@ public class EventServiceImpl implements EventService {
         Predicate predicates = criteriaBuilder.conjunction();
 
         if (text != null && !text.isEmpty()) {
-            //String textDecode = URLDecoder.decode(text, StandardCharsets.UTF_8);
             String textDecode = java.net.URLDecoder.decode(text, StandardCharsets.UTF_8);
             predicates = criteriaBuilder.or(predicates, criteriaBuilder.or(
                     criteriaBuilder.like(root.get("title"), "%" + textDecode.toLowerCase() + "%"),

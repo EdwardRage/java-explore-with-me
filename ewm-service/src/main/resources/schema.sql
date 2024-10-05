@@ -119,3 +119,9 @@ create table if not exists comments
             references events,
     text       varchar not null
 );
+
+create index comments_user_index
+    on comments (user_id);
+
+create index comments_event_index
+    on comments (event_id);
